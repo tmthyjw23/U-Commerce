@@ -377,3 +377,67 @@ body {
     color: var(--text-dark) !important;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
+
+/* --- STYLE KHUSUS HALAMAN CHECKOUT --- */
+
+/* Tipografi Judul Seksi */
+.section-title-checkout {
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: var(--text-dark);
+    letter-spacing: -0.5px; /* Sedikit dirapatkan agar terlihat modern */
+}
+
+/* Form Control yang lebih elegan di checkout */
+.form-control-lg, .form-select-lg {
+    border-color: #e0e0e0;
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+}
+.form-control-lg:focus, .form-select-lg:focus {
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 0 3px rgba(244, 197, 66, 0.15);
+}
+.form-label.small {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+}
+
+/* Kartu Opsi Pengiriman & Pembayaran */
+.option-card, .payment-option-card {
+    border: 2px solid transparent; /* Border transparan default */
+    transition: all 0.2s ease-in-out;
+    position: relative;
+}
+
+.option-card:hover, .payment-option-card:hover {
+    border-color: #ffeeba; /* Kuning sangat muda saat hover */
+    background-color: #fffdf5;
+}
+
+/* Class 'active' ditambahkan manual di HTML untuk simulasi pilihan terpilih */
+/* Di implementasi nyata, ini akan di-handle oleh Javascript/Backend */
+.option-card.active, .payment-option-card.active {
+    border-color: var(--primary-accent) !important;
+    background-color: #fffcf0;
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-accent);
+    border-color: var(--primary-accent);
+}
+
+/* Style khusus untuk kartu pembayaran agar icon besar */
+.payment-option-card i {
+    transition: color 0.2s;
+}
+.payment-option-card.active i {
+    color: var(--primary-accent) !important; /* Ubah warna icon jadi kuning saat aktif */
+}
+
+/* Utility untuk font weight ekstra tebal di total harga */
+.fw-black {
+    font-weight: 900 !important;
+}
