@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Detail - U-Commerce</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: hsl(var(--background));
+            color: hsl(var(--foreground));
+        }
+        main {
+            flex-grow: 1;
+            padding-bottom: 80px; /* Space for the bottom nav */
+        }
+    </style>
+</head>
+<body class="bg-background text-foreground">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 w-full bg-card shadow-soft border-b border-border">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <span class="text-xl font-bold text-primary-foreground">U</span>
+                    </div>
+                    <span class="text-xl font-bold text-foreground hidden sm:block">U-Commerce</span>
+                </a>
+                <form class="flex-1 max-w-2xl">
+                    <div class="relative">
+                        <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground"></i>
+                        <input type="search" placeholder="Cari barang, jasa, atau toko..." class="pl-10 pr-4 py-2 w-full bg-background border rounded-md border-border focus:ring-2 focus:ring-primary" />
+                    </div>
+                </form>
+                <div class="flex items-center gap-2 sm:gap-4">
+                    <a href="cart.html" class="relative p-2 hover:bg-accent rounded-lg transition-colors">
+                        <i data-lucide="shopping-bag" class="h-6 w-6 text-foreground"></i>
+                        <span class="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 rounded-full bg-primary text-primary-foreground text-xs">3</span>
+                    </a>
+                    <a href="chat.html" class="relative p-2 hover:bg-accent rounded-lg transition-colors">
+                        <i data-lucide="message-circle" class="h-6 w-6 text-foreground"></i>
+                        <span class="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 rounded-full bg-destructive text-destructive-foreground text-xs">1</span>
+                    </a>
+                    <a href="profile.html" class="p-2 hover:bg-accent rounded-lg transition-colors hidden sm:flex items-center gap-1">
+                        <i data-lucide="user" class="h-6 w-6 text-foreground"></i>
+                        <span class="text-sm font-medium text-foreground hidden md:block">K4</span>
+                    </a>
+                    <a href="auth.html" class="p-2 hover:bg-accent rounded-lg transition-colors hidden sm:block" title="Logout">
+                        <i data-lucide="log-out" class="h-6 w-6 text-foreground"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content Area -->
+    <main class="container mx-auto px-4 py-6 max-w-6xl">
+        <a href="shops.html" class="inline-flex items-center gap-2 text-sm mb-6 hover:text-primary">&larr; Kembali</a>
+        
+        <!-- Shop Header -->
+        <div class="border rounded-lg border-border mb-6">
+            <div class="p-6 flex items-center gap-4">
+                <div class="w-24 h-24 rounded-full overflow-hidden bg-muted flex-shrink-0">
+                    <img src="assets/shops/byrhys-logo.jpg" alt="U-Kitchen" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <h1 class="text-3xl font-bold text-foreground mb-1">By Rhys</h1>
+                    <div class="flex items-center gap-3 text-sm text-muted-foreground mb-2">
+                        <div class="flex items-center gap-1">
+                            <i data-lucide="star" class="h-4 w-4 fill-yellow-400 text-yellow-400"></i>
+                            <span>5.0</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <i data-lucide="map-pin" class="h-4 w-4"></i>
+                            <span>Online Shop</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <i data-lucide="store" class="h-4 w-4"></i>
+                            <span>Barang</span>
+                        </div>
+                    </div>
+                    <button class="h-9 px-3 inline-flex items-center justify-center rounded-md text-sm font-medium border border-input bg-background hover:bg-accent hover:text-accent-foreground gap-2">
+                        <i data-lucide="message-circle" class="h-4 w-4"></i>
+                        Chat Penjual
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products from this Shop -->
+        <div class="mb-6">
+            <h2 class="text-2xl font-bold text-foreground mb-4">Produk dari By Rhys</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Product Card 1 -->
+                <div class="overflow-hidden rounded-lg hover-lift border border-border bg-card flex flex-col">
+                    <a href="product-detail.html">
+                        <div class="aspect-square overflow-hidden bg-muted relative">
+                            <img src="assets/products/GOJO-1.png" alt="Ayam Geprek" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                            <div class="absolute top-2 left-2 text-xs font-semibold px-2 py-1 bg-secondary text-secondary-foreground rounded-md">Unggulan</div>
+                            <div class="absolute top-2 right-2 text-xs font-semibold uppercase px-2 py-1 bg-destructive text-destructive-foreground rounded-full">PROMO</div>
+                        </div>
+                    </a>
+                    <div class="p-3 flex-grow">
+                        <a href="product-detail.html"><h3 class="font-medium text-sm line-clamp-2 hover:text-primary transition-colors">Lanyard Gojo</h3></a>
+                        <div class="mt-2"><span class="text-primary font-bold text-lg">Rp 30.000</span></div>
+                        <div class="mt-2 flex items-center justify-between text-xs text-muted-foreground">
+                            <div class="flex items-center gap-1"><i data-lucide="star" class="h-3 w-3 fill-primary text-primary"></i><span>5.0</span></div>
+                            <span>Terjual: 70+</span>
+                        </div>
+                    </div>
+                    <div class="p-3 pt-0">
+                        <button class="w-full h-9 px-3 rounded-md bg-primary hover:bg-primary/90 text-primary-foreground text-sm flex items-center justify-center gap-2"><i data-lucide="shopping-cart" class="h-4 w-4"></i>Tambah</button>
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="overflow-hidden rounded-lg hover-lift border border-border bg-card flex flex-col">
+                    <a href="product-detail.html">
+                        <div class="aspect-square overflow-hidden bg-muted relative">
+                            <img src="assets/products/SUKUNA-2.png" alt="Nasi Goreng" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                        </div>
+                    </a>
+                    <div class="p-3 flex-grow">
+                        <a href="product-detail.html"><h3 class="font-medium text-sm line-clamp-2 hover:text-primary transition-colors">Lanyard Sukuna</h3></a>
+                        <div class="mt-2"><span class="text-primary font-bold text-lg">Rp 35.000</span></div>
+                        <div class="mt-2 flex items-center justify-between text-xs text-muted-foreground">
+                            <div class="flex items-center gap-1"><i data-lucide="star" class="h-3 w-3 fill-primary text-primary"></i><span>4.9</span></div>
+                            <span>Terjual: 150+</span>
+                        </div>
+                    </div>
+                    <div class="p-3 pt-0">
+                        <button class="w-full h-9 px-3 rounded-md bg-primary hover:bg-primary/90 text-primary-foreground text-sm flex items-center justify-center gap-2"><i data-lucide="shopping-cart" class="h-4 w-4"></i>Tambah</button>
+                    </div>
+                </div>
+                <!-- Product Card 3 -->
+                <div class="overflow-hidden rounded-lg hover-lift border border-border bg-card flex flex-col">
+                    <a href="product-detail.html">
+                        <div class="aspect-square overflow-hidden bg-muted relative">
+                            <img src="assets/products/flayerbatikbiru.png" alt="Mie Ayam" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                        </div>
+                    </a>
+                    <div class="p-3 flex-grow">
+                        <a href="product-detail.html"><h3 class="font-medium text-sm line-clamp-2 hover:text-primary transition-colors">Lanyard Batik Biru</h3></a>
+                        <div class="mt-2"><span class="text-primary font-bold text-lg">Rp 35.000</span></div>
+                        <div class="mt-2 flex items-center justify-between text-xs text-muted-foreground">
+                            <div class="flex items-center gap-1"><i data-lucide="star" class="h-3 w-3 fill-primary text-primary"></i><span>4.8</span></div>
+                            <span>Terjual: 120+</span>
+                        </div>
+                    </div>
+                    <div class="p-3 pt-0">
+                        <button class="w-full h-9 px-3 rounded-md bg-primary hover:bg-primary/90 text-primary-foreground text-sm flex items-center justify-center gap-2"><i data-lucide="shopping-cart" class="h-4 w-4"></i>Tambah</button>
+                    </div>
+                </div>
+                <!-- Product Card 4 -->
+                <div class="overflow-hidden rounded-lg hover-lift border border-border bg-card flex flex-col">
+                    <a href="product-detail.html">
+                        <div class="aspect-square overflow-hidden bg-muted relative">
+                            <img src="assets/products/flayerbatikcoklat.png" alt="Kopi Susu" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                        </div>
+                    </a>
+                    <div class="p-3 flex-grow">
+                        <a href="product-detail.html"><h3 class="font-medium text-sm line-clamp-2 hover:text-primary transition-colors">Lanyard Batik Coklat</h3></a>
+                        <div class="mt-2"><span class="text-primary font-bold text-lg">Rp 35.000</span></div>
+                        <div class="mt-2 flex items-center justify-between text-xs text-muted-foreground">
+                            <div class="flex items-center gap-1"><i data-lucide="star" class="h-3 w-3 fill-primary text-primary"></i><span>4.9</span></div>
+                            <span>Terjual: 250+</span>
+                        </div>
+                    </div>
+                    <div class="p-3 pt-0">
+                        <button class="w-full h-9 px-3 rounded-md bg-primary hover:bg-primary/90 text-primary-foreground text-sm flex items-center justify-center gap-2"><i data-lucide="shopping-cart" class="h-4 w-4"></i>Tambah</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
