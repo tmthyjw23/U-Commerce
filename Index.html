@@ -38,7 +38,7 @@
         <form>
             <div class="mb-3">
                 <label class="form-label">Email</label>
-                <input type="email" class="form-control" placeholder="email@Ucommerce.com">
+                <input type="email" class="form-control" placeholder="role@Ucommerce.com">
             </div>
 
             <div class="mb-3">
@@ -66,9 +66,9 @@
         const email = emailInput.value;
         const password = passwordInput.value; // Get password value
 
-        if (email === 'Cust@Ucommerce.com' && password === 'password123') {
+        if (email === 'Cust@Ucommerce.com' && password === '123') {
             window.location.href = './Customer/Index.html';
-        } else if (email === 'Seller@Ucommerce.com' && password === 'password123') {
+        } else if (email === 'Seller@Ucommerce.com' && password === '123') {
             window.location.href = './Seller/Index.html';
         } else {
             alert('Email atau password salah. Silakan coba lagi.');
