@@ -92,11 +92,13 @@ h1 {
     cursor: pointer;
     border: none;
     transition: all 0.3s ease;
+    text-decoration: none; /* Added for <a> tags */
 }
 
 .btn-outline {
     background: #fff;
     border: 1px solid #ddd;
+    color: #222; /* Added for <a> tags */
 }
 
 .btn-outline:hover {
@@ -121,12 +123,18 @@ h1 {
     margin-bottom: 30px;
 }
 
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
 .card {
     background: #fff;
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
+    height: 100px; /* Make cards in a row equal height */
 }
 
 .card:hover {
