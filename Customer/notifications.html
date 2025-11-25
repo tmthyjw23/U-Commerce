@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifikasi - U-Commerce</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: hsl(var(--background));
+            color: hsl(var(--foreground));
+        }
+        main {
+            flex-grow: 1;
+            padding-bottom: 80px; /* Space for the bottom nav */
+        }
+    </style>
+</head>
+<body class="bg-background text-foreground">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 w-full bg-card shadow-soft border-b border-border">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <span class="text-xl font-bold text-primary-foreground">U</span>
+                    </div>
+                    <span class="text-xl font-bold text-foreground hidden sm:block">U-Commerce</span>
+                </a>
+                <form class="flex-1 max-w-2xl">
+                    <div class="relative">
+                        <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground"></i>
+                        <input type="search" placeholder="Cari barang, jasa, atau toko..." class="pl-10 pr-4 py-2 w-full bg-background border rounded-md border-border focus:ring-2 focus:ring-primary" />
+                    </div>
+                </form>
+                <div class="flex items-center gap-2 sm:gap-4">
+                    <a href="cart.html" class="relative p-2 hover:bg-accent rounded-lg transition-colors">
+                        <i data-lucide="shopping-bag" class="h-6 w-6 text-foreground"></i>
+                        <span class="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 rounded-full bg-primary text-primary-foreground text-xs">3</span>
+                    </a>
+                    <a href="chat.html" class="relative p-2 hover:bg-accent rounded-lg transition-colors">
+                        <i data-lucide="message-circle" class="h-6 w-6 text-foreground"></i>
+                        <span class="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 rounded-full bg-destructive text-destructive-foreground text-xs">1</span>
+                    </a>
+                    <a href="profile.html" class="p-2 hover:bg-accent rounded-lg transition-colors hidden sm:flex items-center gap-1">
+                        <i data-lucide="user" class="h-6 w-6 text-foreground"></i>
+                        <span class="text-sm font-medium text-foreground hidden md:block">K4</span>
+                    </a>
+                    <a href="auth.html" class="p-2 hover:bg-accent rounded-lg transition-colors hidden sm:block" title="Logout">
+                        <i data-lucide="log-out" class="h-6 w-6 text-foreground"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content Area -->
+    <main class="container mx-auto px-4 py-6">
+        <div class="flex items-center gap-2 mb-6">
+          <i data-lucide="bell" class="h-6 w-6 text-foreground"></i>
+          <h1 class="text-2xl font-bold text-foreground">Notifikasi</h1>
+        </div>
+
+        <div class="space-y-3">
+            <!-- Notification 1 (Unread - Order Update) -->
+            <div class="border rounded-lg border-border bg-card bg-primary/5 border-primary/20">
+                <div class="p-4">
+                    <div class="flex gap-3">
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 bg-primary/20">
+                            <i data-lucide="package" class="h-5 w-5 text-blue-500"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-start justify-between gap-2">
+                                <h3 class="font-semibold text-sm">Pesanan Anda Telah Dikirim!</h3>
+                                <div class="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-1"></div>
+                            </div>
+                            <p class="text-sm text-muted-foreground mt-1">Pesanan #UCM123456 sedang dalam perjalanan menuju Anda.</p>
+                            <p class="text-xs text-muted-foreground mt-2">5 menit yang lalu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Notification 2 (Read - Promotion) -->
+            <div class="border rounded-lg border-border bg-card">
+                <div class="p-4">
+                    <div class="flex gap-3">
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 bg-muted">
+                            <i data-lucide="star" class="h-5 w-5 text-primary"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-start justify-between gap-2">
+                                <h3 class="font-semibold text-sm">Promo Spesial Akhir Pekan!</h3>
+                            </div>
+                            <p class="text-sm text-muted-foreground mt-1">Dapatkan diskon hingga 20% untuk produk pilihan. Klik untuk info lebih lanjut!</p>
+                            <p class="text-xs text-muted-foreground mt-2">1 jam yang lalu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Notification 3 (Unread - New Message) -->
+            <div class="border rounded-lg border-border bg-card bg-primary/5 border-primary/20">
+                <div class="p-4">
+                    <div class="flex gap-3">
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 bg-primary/20">
+                            <i data-lucide="message-circle" class="h-5 w-5 text-green-500"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-start justify-between gap-2">
+                                <h3 class="font-semibold text-sm">Pesan Baru dari Penjual "By Rhys"</h3>
+                                <div class="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-1"></div>
+                            </div>
+                            <p class="text-sm text-muted-foreground mt-1">Penjual membalas pertanyaan Anda tentang Kaos Custom.</p>
+                            <p class="text-xs text-muted-foreground mt-2">3 jam yang lalu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Notification 4 (Read - General Info) -->
+            <div class="border rounded-lg border-border bg-card">
+                <div class="p-4">
+                    <div class="flex gap-3">
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 bg-muted">
+                            <i data-lucide="info" class="h-5 w-5 text-foreground"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-start justify-between gap-2">
+                                <h3 class="font-semibold text-sm">Informasi Pemeliharaan Sistem</h3>
+                            </div>
+                            <p class="text-sm text-muted-foreground mt-1">Akan ada pemeliharaan sistem pada tanggal 23 November 2025 pukul 02:00 WIB.</p>
+                            <p class="text-xs text-muted-foreground mt-2">Kemarin</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- BottomNav -->
+    <nav class="fixed bottom-0 left-0 right-0 z-50 bg-card border-t border-border shadow-strong md:hidden">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-around py-2">
+                <a href="index.html" class="flex flex-col items-center gap-1 py-2 px-4 rounded-lg transition-colors"><i data-lucide="home" class="h-6 w-6"></i><span class="text-xs">Beranda</span></a>
+                <a href="trending.html" class="flex flex-col items-center gap-1 py-2 px-4 rounded-lg transition-colors"><i data-lucide="trending-up" class="h-6 w-6"></i><span class="text-xs">Trending</span></a>
+                <a href="notifications.html" class="flex flex-col items-center gap-1 py-2 px-4 rounded-lg transition-colors relative text-primary font-semibold"><i data-lucide="bell" class="h-6 w-6"></i><span class="absolute -top-2 -right-2 h-4 w-4 flex items-center justify-center p-0 rounded-full bg-destructive text-white text-[10px]">2</span><span class="text-xs">Notifikasi</span></a>
+                <a href="profile.html" class="flex flex-col items-center gap-1 py-2 px-4 rounded-lg transition-colors"><i data-lucide="user" class="h-6 w-6"></i><span class="text-xs">Saya</span></a>
+            </div>
+        </div>
+    </nav>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,0 +1,443 @@
+/* --- STYLE TAMBAHAN UNTUK PRODUCT DETAIL (PROTOTYPE MATCHING) --- */
+/* --- Konfigurasi Global & Variabel Warna --- */
+:root {
+    --primary-soft: #FFF9E6;   /* Latar Belakang Utama */
+    --primary-accent: #F4C542; /* Aksen Kuning Cerah (Tombol, Icon) */
+    --primary-accent-hover: #e0b33a; /* Warna hover tombol */
+    --white: #FFFFFF;
+    --text-dark: #212529;
+    --text-muted: #6c757d;
+    --red-hot: #FF4D4F;        /* Badge HOT dan Diskon */
+    --border-radius-lg: 16px;
+    --border-radius-md: 12px;
+    --box-shadow-soft: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+body {
+    background-color: var(--primary-soft);
+    /* Menggunakan Font Poppins sebagai default */
+    font-family: 'Poppins', sans-serif; 
+    color: var(--text-dark);
+}
+
+/* Menambahkan padding di bawah agar konten tidak tertutup bottom nav di mobile */
+@media (max-width: 991.98px) {
+    body {
+        padding-bottom: 70px;
+    }
+}
+
+/* --- Komponen Header / Navbar --- */
+.top-navbar {
+    background-color: var(--white);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    color: var(--text-dark);
+}
+
+.brand-logo-container {
+    width: 38px;
+    height: 38px;
+    background-color: var(--primary-accent);
+    color: var(--text-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+
+/* Styling Search Bar */
+.input-group-text.search-icon-box {
+    background-color: var(--primary-soft);
+    border: 1px solid transparent;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    color: var(--text-muted);
+    padding-left: 1.2rem;
+}
+.form-control.search-bar {
+    background-color: var(--primary-soft);
+    border: 1px solid transparent;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+}
+.form-control.search-bar:focus {
+    box-shadow: none;
+    border-color: transparent;
+    background-color: #fff3d0; /* Sedikit lebih gelap saat fokus */
+}
+.search-bar::placeholder {
+    color: #adb5bd;
+    font-size: 0.95rem;
+}
+
+/* Styling Icon Header */
+.nav-icon-link {
+    color: var(--text-dark);
+    font-size: 1.5rem;
+    position: relative;
+    transition: color 0.2s;
+}
+.nav-icon-link:hover {
+    color: var(--primary-accent);
+}
+
+.nav-badge {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: var(--red-hot);
+    color: var(--white);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 6px;
+    border-radius: 50%;
+    border: 2px solid var(--white); /* Memberi border putih agar kontras */
+}
+
+/* --- Komponen Halaman Utama --- */
+
+/* Judul Section */
+.section-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+/* Hero Banner */
+.hero-banner {
+    background-color: var(--white);
+    border: 2px solid #ffeeba; /* Border kuning sangat muda */
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    box-shadow: var(--box-shadow-soft);
+}
+.hero-title {
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.8rem;
+}
+.hero-icon {
+    color: var(--primary-accent);
+}
+.hero-text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Badge HOT & Diskon */
+.badge-hot, .discount-badge {
+    background-color: var(--red-hot);
+    color: var(--white);
+    font-weight: 700;
+    border-radius: 20px;
+}
+.badge-hot {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+}
+.discount-badge {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+}
+
+/* Kartu Kategori */
+.category-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid transparent;
+    box-shadow: var(--box-shadow-soft);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.category-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-accent);
+    box-shadow: 0 8px 20px rgba(244, 197, 66, 0.2);
+}
+.category-icon-container {
+    width: 70px;
+    height: 70px;
+    background-color: var(--primary-soft);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+.category-icon {
+    font-size: 2rem;
+    color: var(--primary-accent);
+}
+.category-title {
+    font-weight: 700;
+}
+
+/* Kartu Produk */
+.product-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    border: none;
+    box-shadow: var(--box-shadow-soft);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Trik membuat gambar produk kotak (Aspect Ratio 1:1) */
+.product-img-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* Ini yang membuat wadahnya kotak */
+    background-color: #f8f9fa; /* Placeholder background */
+}
+.product-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Gambar mengisi penuh tanpa gepeng */
+}
+
+/* Judul produk dibatasi 2 baris */
+.text-truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.4;
+    height: 2.8em; /* Tinggi fix untuk 2 baris */
+}
+
+.product-price {
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+}
+
+/* Tombol Tambah */
+.btn-tambah {
+    background-color: var(--primary-accent);
+    color: var(--text-dark);
+    font-weight: 700;
+    border: none;
+    padding: 0.7rem;
+    border-radius: var(--border-radius-md);
+    transition: all 0.2s ease-in-out;
+}
+.btn-tambah:hover {
+    background-color: var(--primary-accent-hover);
+    transform: scale(1.02); /* Efek sedikit membesar saat hover */
+}
+
+/* Kartu Toko */
+.shop-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow-soft);
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+.shop-card:hover {
+    border-color: var(--primary-accent);
+}
+.shop-icon-container {
+    background-color: var(--primary-soft);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.shop-icon {
+    color: var(--primary-accent);
+}
+
+/* --- Bottom Navigation (Mobile) --- */
+.bottom-nav {
+    z-index: 1050; /* Pastikan di atas elemen lain */
+}
+.bottom-nav-item {
+    transition: color 0.2s;
+}
+.bottom-nav-item.active {
+    color: var(--primary-accent) !important;
+}
+.bottom-nav-item:hover {
+    color: var(--primary-accent) !important;
+}
+
+/* 1. Tombol Kembali */
+.btn-kembali {
+    background-color: var(--white);
+    color: var(--text-dark);
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    transition: all 0.2s;
+}
+.btn-kembali:hover {
+    background-color: #f8f9fa;
+    border-color: #d0d0d0;
+}
+
+/* 2. Container Gambar Utama (Lebih Besar) */
+.main-image-container {
+    width: 100%;
+    padding-top: 100%; /* Square aspect ratio agar besar seperti di gambar */
+    position: relative;
+    background-color: #f0f0f0; /* Placeholder background */
+}
+
+/* 3. Price Box Prototype Style (Flat, Kuning Lembut) */
+.price-box-prototype {
+    background-color: var(--primary-soft); /* #FFF9E6 */
+    border: none; /* Tidak ada border */
+    /* Box shadow sangat halus agar tidak terlihat flat total */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02); 
+}
+
+/* 4. Quantity Selector Prototype Style (Tombol Bulat Terpisah) */
+.qty-btn-proto {
+    width: 45px;
+    height: 45px;
+    background-color: var(--white);
+    border: 1px solid #e0e0e0;
+    color: var(--text-dark);
+    transition: all 0.2s;
+}
+.qty-btn-proto:hover {
+    background-color: #f8f9fa;
+    border-color: var(--primary-accent);
+    color: var(--primary-accent);
+}
+#qty-input:focus {
+    box-shadow: none; /* Hilangkan outline focus pada input angka */
+}
+
+/* 5. Action Buttons Prototype Style */
+/* Tombol Outline (Keranjang) */
+.btn-outline-proto {
+    background-color: var(--white);
+    border: 2px solid #e0e0e0;
+    color: var(--text-dark);
+    transition: all 0.2s;
+}
+.btn-outline-proto:hover {
+    border-color: var(--primary-accent);
+    background-color: #fffcf5; /* Sedikit kuning saat hover */
+}
+
+/* Tombol Solid (Beli Sekarang) */
+.btn-solid-proto {
+    background-color: var(--primary-accent);
+    border: none;
+    color: var(--text-dark);
+    box-shadow: 0 4px 12px rgba(244, 197, 66, 0.3);
+    transition: all 0.2s;
+}
+.btn-solid-proto:hover {
+    background-color: var(--primary-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(244, 197, 66, 0.4);
+}
+
+/* --- Styling Tab Navigasi (Memastikan konsistensi) --- */
+.nav-pills .nav-link {
+    color: var(--text-muted);
+    background-color: #f8f9fa;
+    margin-right: 5px;
+    transition: all 0.2s;
+}
+.nav-pills .nav-link:hover {
+    background-color: #e9ecef;
+    color: var(--primary-accent);
+}
+.nav-pills .nav-link.active {
+    background-color: var(--primary-accent) !important;
+    color: var(--text-dark) !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* --- STYLE KHUSUS HALAMAN CHECKOUT --- */
+
+/* Tipografi Judul Seksi */
+.section-title-checkout {
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: var(--text-dark);
+    letter-spacing: -0.5px; /* Sedikit dirapatkan agar terlihat modern */
+}
+
+/* Form Control yang lebih elegan di checkout */
+.form-control-lg, .form-select-lg {
+    border-color: #e0e0e0;
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+}
+.form-control-lg:focus, .form-select-lg:focus {
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 0 3px rgba(244, 197, 66, 0.15);
+}
+.form-label.small {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+}
+
+/* Kartu Opsi Pengiriman & Pembayaran */
+.option-card, .payment-option-card {
+    border: 2px solid transparent; /* Border transparan default */
+    transition: all 0.2s ease-in-out;
+    position: relative;
+}
+
+.option-card:hover, .payment-option-card:hover {
+    border-color: #ffeeba; /* Kuning sangat muda saat hover */
+    background-color: #fffdf5;
+}
+
+/* Class 'active' ditambahkan manual di HTML untuk simulasi pilihan terpilih */
+/* Di implementasi nyata, ini akan di-handle oleh Javascript/Backend */
+.option-card.active, .payment-option-card.active {
+    border-color: var(--primary-accent) !important;
+    background-color: #fffcf0;
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-accent);
+    border-color: var(--primary-accent);
+}
+
+/* Style khusus untuk kartu pembayaran agar icon besar */
+.payment-option-card i {
+    transition: color 0.2s;
+}
+.payment-option-card.active i {
+    color: var(--primary-accent) !important; /* Ubah warna icon jadi kuning saat aktif */
+}
+
+/* Utility untuk font weight ekstra tebal di total harga */
+.fw-black {
+    font-weight: 900 !important;
+}
