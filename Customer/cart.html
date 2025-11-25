@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang Belanja - U-Commerce</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: hsl(var(--background));
+            color: hsl(var(--foreground));
+        }
+        main {
+            flex-grow: 1;
+            padding-bottom: 80px; /* Space for the bottom nav */
+        }
+    </style>
+</head>
+<body class="bg-background text-foreground">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 w-full bg-card shadow-soft border-b border-border">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <span class="text-xl font-bold text-primary-foreground">U</span>
+                    </div>
+                    <span class="text-xl font-bold text-foreground hidden sm:block">U-Commerce</span>
+                </a>
+                <form class="flex-1 max-w-2xl">
+                    <div class="relative">
+                        <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground"></i>
+                        <input type="search" placeholder="Cari barang, jasa, atau toko..." class="pl-10 pr-4 py-2 w-full bg-background border rounded-md border-border focus:ring-2 focus:ring-primary" />
+                    </div>
+                </form>
+                <div class="flex items-center gap-2 sm:gap-4">
+                    <a href="cart.html" class="relative p-2 hover:bg-accent rounded-lg transition-colors">
+                        <i data-lucide="shopping-bag" class="h-6 w-6 text-foreground"></i>
+                        <span class="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 rounded-full bg-primary text-primary-foreground text-xs">3</span>
+                    </a>
+                    <a href="chat.html" class="relative p-2 hover:bg-accent rounded-lg transition-colors">
+                        <i data-lucide="message-circle" class="h-6 w-6 text-foreground"></i>
+                        <span class="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 rounded-full bg-destructive text-destructive-foreground text-xs">1</span>
+                    </a>
+                    <a href="profile.html" class="p-2 hover:bg-accent rounded-lg transition-colors hidden sm:flex items-center gap-1">
+                        <i data-lucide="user" class="h-6 w-6 text-foreground"></i>
+                        <span class="text-sm font-medium text-foreground hidden md:block">K4</span>
+                    </a>
+                    <a href="auth.html" class="p-2 hover:bg-accent rounded-lg transition-colors hidden sm:block" title="Logout">
+                        <i data-lucide="log-out" class="h-6 w-6 text-foreground"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content Area -->
+    <main class="container mx-auto px-4 py-6">
+        <div class="flex items-center gap-2 mb-6">
+          <i data-lucide="shopping-bag" class="h-6 w-6 text-foreground"></i>
+          <h1 class="text-2xl font-bold text-foreground">Kantong Belanja</h1>
+        </div>
+
+        <div class="space-y-3">
+            <!-- Cart Item 1 -->
+            <div class="border rounded-lg border-border bg-card">
+                <div class="p-4">
+                    <div class="flex gap-3">
+                        <input type="checkbox" checked class="h-4 w-4 mt-1 rounded text-primary focus:ring-primary border-border">
+                        <div class="w-20 h-20 rounded-lg overflow-hidden bg-muted flex-shrink-0">
+                            <img src="assets/products/ayam-geprek.jpg" alt="Ayam Geprek Sambal Bawang" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-semibold text-sm line-clamp-2">Ayam Geprek Sambal Bawang</h3>
+                            <div class="flex items-center justify-between mt-2">
+                                <span class="text-primary font-bold">Rp 15.000</span>
+                                <div class="flex items-center gap-2">
+                                    <button class="h-7 w-7 inline-flex items-center justify-center rounded-md border border-input bg-transparent text-sm font-medium hover:bg-accent hover:text-accent-foreground"><i data-lucide="minus" class="h-3 w-3"></i></button>
+                                    <span class="w-8 text-center text-sm font-medium">1</span>
+                                    <button class="h-7 w-7 inline-flex items-center justify-center rounded-md border border-input bg-transparent text-sm font-medium hover:bg-accent hover:text-accent-foreground"><i data-lucide="plus" class="h-3 w-3"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="flex-shrink-0 h-9 w-9 inline-flex items-center justify-center rounded-md text-sm font-medium text-destructive hover:bg-destructive/10">
+                            <i data-lucide="trash-2" class="h-4 w-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Cart Item 2 -->
+            <div class="border rounded-lg border-border bg-card">
+                <div class="p-4">
+                    <div class="flex gap-3">
+                        <input type="checkbox" checked class="h-4 w-4 mt-1 rounded text-primary focus:ring-primary border-border">
+                        <div class="w-20 h-20 rounded-lg overflow-hidden bg-muted flex-shrink-0">
+                            <img src="assets/products/kopi-susu.jpg" alt="Es Kopi Susu Gula Aren" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-semibold text-sm line-clamp-2">Es Kopi Susu Gula Aren</h3>
+                            <div class="flex items-center justify-between mt-2">
+                                <span class="text-primary font-bold">Rp 18.000</span>
+                                <div class="flex items-center gap-2">
+                                    <button class="h-7 w-7 inline-flex items-center justify-center rounded-md border border-input bg-transparent text-sm font-medium hover:bg-accent hover:text-accent-foreground"><i data-lucide="minus" class="h-3 w-3"></i></button>
+                                    <span class="w-8 text-center text-sm font-medium">1</span>
+                                    <button class="h-7 w-7 inline-flex items-center justify-center rounded-md border border-input bg-transparent text-sm font-medium hover:bg-accent hover:text-accent-foreground"><i data-lucide="plus" class="h-3 w-3"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="flex-shrink-0 h-9 w-9 inline-flex items-center justify-center rounded-md text-sm font-medium text-destructive hover:bg-destructive/10">
+                            <i data-lucide="trash-2" class="h-4 w-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Cart Item 3 -->
+            <div class="border rounded-lg border-border bg-card">
+                <div class="p-4">
+                    <div class="flex gap-3">
+                        <input type="checkbox" checked class="h-4 w-4 mt-1 rounded text-primary focus:ring-primary border-border">
+                        <div class="w-20 h-20 rounded-lg overflow-hidden bg-muted flex-shrink-0">
+                            <img src="assets/products/GOJO-1.png" alt="Lanyard Gojo" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-semibold text-sm line-clamp-2">Lanyard Gojo</h3>
+                            <div class="flex items-center justify-between mt-2">
+                                <span class="text-primary font-bold">Rp 30.000</span>
+                                <div class="flex items-center gap-2">
+                                    <button class="h-7 w-7 inline-flex items-center justify-center rounded-md border border-input bg-transparent text-sm font-medium hover:bg-accent hover:text-accent-foreground"><i data-lucide="minus" class="h-3 w-3"></i></button>
+                                    <span class="w-8 text-center text-sm font-medium">1</span>
+                                    <button class="h-7 w-7 inline-flex items-center justify-center rounded-md border border-input bg-transparent text-sm font-medium hover:bg-accent hover:text-accent-foreground"><i data-lucide="plus" class="h-3 w-3"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="flex-shrink-0 h-9 w-9 inline-flex items-center justify-center rounded-md text-sm font-medium text-destructive hover:bg-destructive/10">
+                            <i data-lucide="trash-2" class="h-4 w-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Cart Item 4 -->
+            <div class="border rounded-lg border-border bg-card">
+                <div class="p-4">
+                    <div class="flex gap-3">
+                        <input type="checkbox" checked class="h-4 w-4 mt-1 rounded text-primary focus:ring-primary border-border">
+                        <div class="w-20 h-20 rounded-lg overflow-hidden bg-muted flex-shrink-0">
+                            <img src="assets/products/SUKUNA-2.png" alt="Lanyard Sukuna" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-semibold text-sm line-clamp-2">Lanyard Sukuna</h3>
+                            <div class="flex items-center justify-between mt-2">
+                                <span class="text-primary font-bold">Rp 35.000</span>
+                                <div class="flex items-center gap-2">
+                                    <button class="h-7 w-7 inline-flex items-center justify-center rounded-md border border-input bg-transparent text-sm font-medium hover:bg-accent hover:text-accent-foreground"><i data-lucide="minus" class="h-3 w-3"></i></button>
+                                    <span class="w-8 text-center text-sm font-medium">1</span>
+                                    <button class="h-7 w-7 inline-flex items-center justify-center rounded-md border border-input bg-transparent text-sm font-medium hover:bg-accent hover:text-accent-foreground"><i data-lucide="plus" class="h-3 w-3"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="flex-shrink-0 h-9 w-9 inline-flex items-center justify-center rounded-md text-sm font-medium text-destructive hover:bg-destructive/10">
+                            <i data-lucide="trash-2" class="h-4 w-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Cart Item 5 -->
+            <div class="border rounded-lg border-border bg-card">
+                <div class="p-4">
+                    <div class="flex gap-3">
+                        <input type="checkbox" checked class="h-4 w-4 mt-1 rounded text-primary focus:ring-primary border-border">
+                        <div class="w-20 h-20 rounded-lg overflow-hidden bg-muted flex-shrink-0">
+                            <img src="assets/products/flayerbatikbiru.png" alt="Lanyard Batik Biru" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-semibold text-sm line-clamp-2">Lanyard Batik Biru</h3>
+                            <div class="flex items-center justify-between mt-2">
+                                <span class="text-primary font-bold">Rp 35.000</span>
+                                <div class="flex items-center gap-2">
+                                    <button class="h-7 w-7 inline-flex items-center justify-center rounded-md border border-input bg-transparent text-sm font-medium hover:bg-accent hover:text-accent-foreground"><i data-lucide="minus" class="h-3 w-3"></i></button>
+                                    <span class="w-8 text-center text-sm font-medium">1</span>
+                                    <button class="h-7 w-7 inline-flex items-center justify-center rounded-md border border-input bg-transparent text-sm font-medium hover:bg-accent hover:text-accent-foreground"><i data-lucide="plus" class="h-3 w-3"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="flex-shrink-0 h-9 w-9 inline-flex items-center justify-center rounded-md text-sm font-medium text-destructive hover:bg-destructive/10">
+                            <i data-lucide="trash-2" class="h-4 w-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Cart Item 6 -->
+            <div class="border rounded-lg border-border bg-card">
+                <div class="p-4">
+                    <div class="flex gap-3">
+                        <input type="checkbox" checked class="h-4 w-4 mt-1 rounded text-primary focus:ring-primary border-border">
+                        <div class="w-20 h-20 rounded-lg overflow-hidden bg-muted flex-shrink-0">
+                            <img src="assets/products/flayerbatikcoklat.png" alt="Lanyard Batik Coklat" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-semibold text-sm line-clamp-2">Lanyard Batik Coklat</h3>
+                            <div class="flex items-center justify-between mt-2">
+                                <span class="text-primary font-bold">Rp 35.000</span>
+                                <div class="flex items-center gap-2">
+                                    <button class="h-7 w-7 inline-flex items-center justify-center rounded-md border border-input bg-transparent text-sm font-medium hover:bg-accent hover:text-accent-foreground"><i data-lucide="minus" class="h-3 w-3"></i></button>
+                                    <span class="w-8 text-center text-sm font-medium">1</span>
+                                    <button class="h-7 w-7 inline-flex items-center justify-center rounded-md border border-input bg-transparent text-sm font-medium hover:bg-accent hover:text-accent-foreground"><i data-lucide="plus" class="h-3 w-3"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="flex-shrink-0 h-9 w-9 inline-flex items-center justify-center rounded-md text-sm font-medium text-destructive hover:bg-destructive/10">
+                            <i data-lucide="trash-2" class="h-4 w-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Cart Item 7 -->
+            <div class="border rounded-lg border-border bg-card">
+                <div class="p-4">
+                    <div class="flex gap-3">
+                        <input type="checkbox" checked class="h-4 w-4 mt-1 rounded text-primary focus:ring-primary border-border">
+                        <div class="w-20 h-20 rounded-lg overflow-hidden bg-muted flex-shrink-0">
+                            <img src="assets/products/nasi-goreng.jpg" alt="Nasi Goreng Spesial" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-semibold text-sm line-clamp-2">Nasi Goreng Spesial</h3>
+                            <div class="flex items-center justify-between mt-2">
+                                <span class="text-primary font-bold">Rp 16.000</span>
+                                <div class="flex items-center gap-2">
+                                    <button class="h-7 w-7 inline-flex items-center justify-center rounded-md border border-input bg-transparent text-sm font-medium hover:bg-accent hover:text-accent-foreground"><i data-lucide="minus" class="h-3 w-3"></i></button>
+                                    <span class="w-8 text-center text-sm font-medium">1</span>
+                                    <button class="h-7 w-7 inline-flex items-center justify-center rounded-md border border-input bg-transparent text-sm font-medium hover:bg-accent hover:text-accent-foreground"><i data-lucide="plus" class="h-3 w-3"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="flex-shrink-0 h-9 w-9 inline-flex items-center justify-center rounded-md text-sm font-medium text-destructive hover:bg-destructive/10">
+                            <i data-lucide="trash-2" class="h-4 w-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Cart Item 8 -->
+            <div class="border rounded-lg border-border bg-card">
+                <div class="p-4">
+                    <div class="flex gap-3">
+                        <input type="checkbox" checked class="h-4 w-4 mt-1 rounded text-primary focus:ring-primary border-border">
+                        <div class="w-20 h-20 rounded-lg overflow-hidden bg-muted flex-shrink-0">
+                            <img src="assets/products/mie-ayam.jpg" alt="Mie Ayam Bakso" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-semibold text-sm line-clamp-2">Mie Ayam Bakso</h3>
+                            <div class="flex items-center justify-between mt-2">
+                                <span class="text-primary font-bold">Rp 14.000</span>
+                                <div class="flex items-center gap-2">
+                                    <button class="h-7 w-7 inline-flex items-center justify-center rounded-md border border-input bg-transparent text-sm font-medium hover:bg-accent hover:text-accent-foreground"><i data-lucide="minus" class="h-3 w-3"></i></button>
+                                    <span class="w-8 text-center text-sm font-medium">1</span>
+                                    <button class="h-7 w-7 inline-flex items-center justify-center rounded-md border border-input bg-transparent text-sm font-medium hover:bg-accent hover:text-accent-foreground"><i data-lucide="plus" class="h-3 w-3"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="flex-shrink-0 h-9 w-9 inline-flex items-center justify-center rounded-md text-sm font-medium text-destructive hover:bg-destructive/10">
+                            <i data-lucide="trash-2" class="h-4 w-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Checkout Bottom Bar -->
+    <div class="fixed bottom-16 left-0 right-0 bg-card border-t border-border shadow-strong p-4 z-40">
+        <div class="container mx-auto">
+            <div class="flex items-center justify-between mb-3">
+                <span class="text-sm text-muted-foreground">Total (8 item):</span>
+                <span class="text-xl font-bold text-primary">Rp 198.000</span>
+            </div>
+            <button class="w-full h-10 px-4 py-2 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium bg-primary hover:bg-primary/90 text-primary-foreground">
+                Bayar Sekarang
+            </button>
+        </div>
+    </div>
+
+    <!-- BottomNav -->
+    <nav class="fixed bottom-0 left-0 right-0 z-50 bg-card border-t border-border shadow-strong md:hidden">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-around py-2">
+                <a href="index.html" class="flex flex-col items-center gap-1 py-2 px-4 rounded-lg transition-colors"><i data-lucide="home" class="h-6 w-6"></i><span class="text-xs">Beranda</span></a>
+                <a href="trending.html" class="flex flex-col items-center gap-1 py-2 px-4 rounded-lg transition-colors"><i data-lucide="trending-up" class="h-6 w-6"></i><span class="text-xs">Trending</span></a>
+                <a href="notifications.html" class="flex flex-col items-center gap-1 py-2 px-4 rounded-lg transition-colors relative"><i data-lucide="bell" class="h-6 w-6"></i><span class="absolute -top-2 -right-2 h-4 w-4 flex items-center justify-center p-0 rounded-full bg-destructive text-white text-[10px]">2</span><span class="text-xs">Notifikasi</span></a>
+                <a href="profile.html" class="flex flex-col items-center gap-1 py-2 px-4 rounded-lg transition-colors"><i data-lucide="user" class="h-6 w-6"></i><span class="text-xs">Saya</span></a>
+            </div>
+        </div>
+    </nav>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

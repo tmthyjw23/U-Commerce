@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U-Commerce - Checkout</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body style="background-color: var(--primary-soft);">
+
+    <nav class="navbar navbar-expand-lg sticky-top top-navbar bg-white border-bottom" style="padding-top: 1rem; padding-bottom: 1rem;">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <div class="brand-logo-container me-2" style="width: 32px; height: 32px; font-size: 1.1rem;">U</div>
+                <span style="font-weight: 700; font-size: 1.3rem;">U-Commerce</span>
+                <span class="mx-3 text-muted fw-light">|</span>
+                <span class="fw-semibold" style="font-size: 1.1rem;">Checkout</span>
+            </a>
+            </div>
+    </nav>
+
+    <main class="container my-5 pb-5">
+        <div class="row g-4 g-lg-5">
+            
+            <div class="col-lg-8">
+                
+                <section class="mb-5">
+                    <h5 class="section-title-checkout mb-4">
+                        <i class="bi bi-geo-alt-fill me-2 text-warning"></i>Lokasi Penerimaan
+                    </h5>
+                    
+                    <div class="bg-white p-4 rounded-4 shadow-sm">
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold small">Nama Penerima</label>
+                                    <input type="text" class="form-control form-control-lg" value="Rivaldo Roring" style="font-weight: 500;">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold small">Nomor HP / WhatsApp</label>
+                                    <input type="text" class="form-control form-control-lg" value="081234567890" style="font-weight: 500;">
+                                </div>
+                                <div class="col-12 pt-2">
+                                    <label class="form-label fw-semibold small">Tipe Lokasi Kampus</label>
+                                    <select class="form-select form-select-lg fw-medium" aria-label="Tipe Lokasi">
+                                        <option selected>Asrama Mahasiswa</option>
+                                        <option value="1">Kos-kosan Sekitar Kampus</option>
+                                        <option value="2">Titik COD (Kantin/Gedung)</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-8 pt-2">
+                                    <label class="form-label fw-semibold small">Nama Gedung / Asrama / Kos</label>
+                                    <input type="text" class="form-control form-control-lg" placeholder="Contoh: Asrama Putra Hall B" style="font-weight: 500;">
+                                </div>
+                                <div class="col-md-4 pt-2">
+                                    <label class="form-label fw-semibold small">Nomor Kamar / Detail Titik</label>
+                                    <input type="text" class="form-control form-control-lg" placeholder="Contoh: B-305" style="font-weight: 500;">
+                                </div>
+                                <div class="col-12 pt-2">
+                                     <label class="form-label fw-semibold small">Catatan Tambahan (Opsional)</label>
+                                     <textarea class="form-control" rows="2" placeholder="Misal: Titip di satpam kalau saya sedang kuliah"></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <section class="mb-5">
+                    <h5 class="section-title-checkout mb-4">
+                        <i class="bi bi-truck me-2 text-warning"></i>Metode Pengiriman
+                    </h5>
+                    <div class="d-flex flex-column gap-3">
+                        <label class="option-card d-flex align-items-center justify-content-between p-3 rounded-4 bg-white shadow-sm cursor-pointer">
+                            <div class="d-flex align-items-center">
+                                <input class="form-check-input me-3 mt-0 p-2" type="radio" name="shippingMethod" id="ship1">
+                                <div>
+                                    <h6 class="mb-1 fw-bold">Ambil Sendiri di Toko/Penjual</h6>
+                                    <p class="mb-0 text-muted small">Anda menemui penjual di lokasi mereka.</p>
+                                </div>
+                            </div>
+                            <span class="fw-bold text-success">Gratis</span>
+                        </label>
+                        <label class="option-card active d-flex align-items-center justify-content-between p-3 rounded-4 bg-white shadow-sm cursor-pointer" style="border: 2px solid var(--primary-accent);">
+                            <div class="d-flex align-items-center">
+                                <input class="form-check-input me-3 mt-0 p-2" type="radio" name="shippingMethod" id="ship2" checked>
+                                <div>
+                                    <h6 class="mb-1 fw-bold">COD Sekitar Kampus</h6>
+                                    <p class="mb-0 text-muted small">Diantar penjual ke lokasi Anda di area kampus.</p>
+                                </div>
+                            </div>
+                            <span class="fw-bold">Rp 5.000</span>
+                        </label>
+                         <label class="option-card d-flex align-items-center justify-content-between p-3 rounded-4 bg-white shadow-sm cursor-pointer">
+                            <div class="d-flex align-items-center">
+                                <input class="form-check-input me-3 mt-0 p-2" type="radio" name="shippingMethod" id="ship3">
+                                <div>
+                                    <h6 class="mb-1 fw-bold"><i class="bi bi-box-seam me-1"></i> GoSend / Kurir Instan</h6>
+                                    <p class="mb-0 text-muted small">Dikirim via aplikasi ojek online.</p>
+                                </div>
+                            </div>
+                            <span class="fw-bold">Rp 15.000</span>
+                        </label>
+                    </div>
+                </section>
+
+                 <section class="mb-5">
+                    <h5 class="section-title-checkout mb-4">
+                        <i class="bi bi-credit-card-2-front me-2 text-warning"></i>Metode Pembayaran
+                    </h5>
+                    
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <label class="payment-option-card active h-100 p-3 rounded-4 bg-white shadow-sm cursor-pointer text-center d-flex flex-column justify-content-center" style="border: 2px solid var(--primary-accent);">
+                                <input class="form-check-input position-absolute top-0 start-0 m-3 p-2" type="radio" name="paymentMethod" checked>
+                                <i class="bi bi-qr-code-scan fs-1 mb-2 text-warning"></i>
+                                <h6 class="fw-bold mb-0">QRIS / E-Wallet</h6>
+                                <small class="text-muted">Scan & Bayar</small>
+                            </label>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="payment-option-card h-100 p-3 rounded-4 bg-white shadow-sm cursor-pointer text-center d-flex flex-column justify-content-center">
+                                <input class="form-check-input position-absolute top-0 start-0 m-3 p-2" type="radio" name="paymentMethod">
+                                <i class="bi bi-bank fs-1 mb-2 text-muted"></i>
+                                <h6 class="fw-bold mb-0">Transfer Bank</h6>
+                                <small class="text-muted">Cek Manual</small>
+                            </label>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="payment-option-card h-100 p-3 rounded-4 bg-white shadow-sm cursor-pointer text-center d-flex flex-column justify-content-center">
+                                <input class="form-check-input position-absolute top-0 start-0 m-3 p-2" type="radio" name="paymentMethod">
+                                <i class="bi bi-cash-coin fs-1 mb-2 text-muted"></i>
+                                <h6 class="fw-bold mb-0">Bayar di Tempat</h6>
+                                <small class="text-muted">COD</small>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+            </div> <div class="col-lg-4">
+                <div class="sticky-lg-top" style="top: 100px; z-index: 1;">
+                    <div class="bg-white p-4 rounded-4 shadow-sm">
+                        <h5 class="fw-bold mb-4">Ringkasan Pesanan</h5>
+
+                        <div class="checkout-item d-flex align-items-center mb-3 pb-3 border-bottom">
+                            <div class="flex-shrink-0 rounded-3 overflow-hidden border" style="width: 60px; height: 60px;">
+                                <img src="../../assets/products/flayerbatikcoklat.png" alt="Lanyard Batik Coklat" class="w-100 h-100 object-fit-cover">
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6 class="fw-semibold mb-1 text-truncate-2" style="font-size: 0.95rem;">Lanyard Batik Coklat</h6>
+                                <div class="d-flex justify-content-between align-items-center small">
+                                    <span class="text-muted">1 x Rp 35.000</span>
+                                    <span class="fw-bold">Rp 35.000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="vstack gap-2 mb-4">
+                            <div class="d-flex justify-content-between text-muted">
+                                <span>Subtotal Produk</span>
+                                <span>Rp 35.000</span>
+                            </div>
+                            <div class="d-flex justify-content-between text-muted">
+                                <span>Biaya Pengiriman (COD Kampus)</span>
+                                <span>Rp 5.000</span>
+                            </div>
+                            <div class="d-flex justify-content-between text-muted">
+                                <span>Biaya Layanan</span>
+                                <span>Rp 1.000</span>
+                            </div>
+                        </div>
+
+                        <hr class="my-3 opacity-50">
+
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h6 class="fw-bold mb-0 fs-5">Total Pembayaran</h6>
+                            <span class="fw-black mb-0 display-6" style="color: var(--primary-accent);" >Rp 41.000</span>
+                        </div>
+
+                        <button class="btn btn-solid-proto btn-lg rounded-pill w-100 py-3 fw-bold fs-5">
+                            Buat Pesanan Sekarang
+                        </button>
+
+                        <p class="text-center text-muted small mt-3 mb-0">
+                            Dengan membuat pesanan, Anda menyetujui Syarat & Ketentuan U-Commerce.
+                        </p>
+                    </div>
+                </div>
+            </div> </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
