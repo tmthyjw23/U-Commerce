@@ -3998,3 +3998,27 @@ All colors MUST be HSL.
 [data-side=right] .\[\[data-side\=right\]_\&\]\:cursor-e-resize {
   cursor: e-resize;
 }
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+}
+main {
+    flex-grow: 1;
+    padding-bottom: 80px; /* Space for the bottom nav */
+}
+/* Styles for tabs, making 'all' active by default */
+.tab-content-profile { display: none; }
+.tab-content-profile.active { display: block; }
+.tab-trigger-profile.active {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+.tab-trigger-profile.active {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
